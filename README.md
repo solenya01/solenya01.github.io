@@ -91,7 +91,11 @@
     </p>
 
     <div class="buttons">
-      <a href="#portfolio" class="button">View Portfolio</a>
+      <a href="https://www.behance.net/ecemnurkahrman" 
+   class="button" 
+   target="_blank">
+  View Portfolio
+</a>
       <button class="button">Contact</button>
     </div>
 <section id="portfolio" style="margin-top:120px;">
