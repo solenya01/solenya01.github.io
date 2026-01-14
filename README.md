@@ -96,5 +96,6 @@
    target="_blank">
   View Portfolio
 </a>
-      <button class="button">Contact</button>
-    </div>
+      <a href="mailto:gwem1720@gmail.com" class="button">
+  Contact
+</a>
