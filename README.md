@@ -176,12 +176,9 @@ for(let i=0;i<25;i++){
   <h2>GRAPHIC DESIGNER & ILLUSTRATOR</h2>
 
   <p>
-    Graphic designer and illustrator with eight years of experience in visual
-    storytelling and image-making. Focused on visual identity, illustration,
-    and concept-driven design.
-    <br><br>
-    Influenced by Japanese visual culture, editorial systems, darkness,
-    and controlled chaos. Design as atmosphere. Image as language.
+  Graphic designer and illustrator with eight years of experience in visual storytelling and image-makeing. My professional focus includes visual identity, illustration, and concept-driven design.
+I have experience in developing strong narratives through composition. Typography, and character-based visuals, aiming to create designs that are intentional and conceptually grounded rather than purely decorative.
+Throughout my career, i have built a distinctive visual language influenced by illustration, digital culture, and editorial aesthetics.. I value clarity, consistency, and meaning in design, And i strive to produce visuals that communicate ideas with confidence and precision. This portfolio represents my long-term dedication to graphic design And illustration as both a professional pratice and a way of thinking.
   </p>
 
   <div class="buttons">
