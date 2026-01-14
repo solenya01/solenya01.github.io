@@ -1,70 +1,98 @@
-# solenya01.github.io
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Awesome Portfolio</title>
+  <meta charset="UTF-8">
+  <title>Sole — Designer & Illustrator</title>
+
   <style>
-    /* GENEL AYARLAR */
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
-      padding: 0;
-      background: linear-gradient(135deg, #ff9a9e, #fad0c4); /* gradient arkaplan */
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      color: #333;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #0a192f, #112240);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: #e6f1ff;
       display: flex;
-      flex-direction: column;
       align-items: center;
       justify-content: center;
-      min-height: 100vh;
-      text-align: center;
-      animation: fadeIn 2s ease-in;
     }
 
-    /* BAŞLIK */
+    .container {
+      max-width: 900px;
+      padding: 60px;
+    }
+
     h1 {
-      font-size: 3rem;
-      color: #fff;
-      text-shadow: 2px 2px 10px rgba(0,0,0,0.3);
-      margin-bottom: 20px;
+      font-size: 3.5rem;
+      margin: 0 0 20px 0;
+      letter-spacing: -1px;
     }
 
-    /* ALT YAZI */
+    h1 span {
+      color: #64ffda;
+    }
+
     p {
       font-size: 1.2rem;
-      color: #fff;
+      line-height: 1.6;
+      color: #a8b2d1;
       max-width: 600px;
-      line-height: 1.5;
     }
 
-    /* BUTON */
+    .buttons {
+      margin-top: 40px;
+      display: flex;
+      gap: 20px;
+    }
+
     .btn {
-      margin-top: 30px;
-      padding: 10px 30px;
+      padding: 14px 32px;
+      border-radius: 30px;
+      border: 1px solid #64ffda;
+      background: transparent;
+      color: #64ffda;
       font-size: 1rem;
-      color: #ff9a9e;
-      background-color: #fff;
-      border: none;
-      border-radius: 25px;
       cursor: pointer;
       transition: all 0.3s ease;
     }
 
     .btn:hover {
-      transform: scale(1.1);
-      background-color: rgba(255,255,255,0.8);
+      background: #64ffda;
+      color: #0a192f;
+      transform: translateY(-3px);
     }
 
-    /* BASİT ANİMASYON */
-    @keyframes fadeIn {
-      from {opacity: 0;}
-      to {opacity: 1;}
+    .footer {
+      margin-top: 80px;
+      font-size: 0.9rem;
+      color: #8892b0;
     }
-
   </style>
 </head>
+
 <body>
-  <h1>Hi, I'm Sole</h1>
-  <p>I'm a passionate graphic designer & illustrator creating vibrant visuals and telling stories through colors and shapes. Welcome to my colorful world!</p>
-  <button class="btn">Check my work</button>
+  <div class="container">
+    <h1>
+      Hi, I’m <span>Sole</span>
+    </h1>
+
+    <p>
+      I’m a graphic designer & illustrator focused on creating clean,
+      expressive visuals and digital experiences.
+      I love color, balance and bold ideas.
+    </p>
+
+    <div class="buttons">
+      <button class="btn">View My Work</button>
+      <button class="btn">Contact Me</button>
+    </div>
+
+    <div class="footer">
+      © 2026 Sole — all rights reserved
+    </div>
+  </div>
 </body>
 </html>
