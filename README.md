@@ -14,9 +14,9 @@
     body {
       min-height: 100vh;
       background:
-        radial-gradient(circle at 30% 20%, rgba(40,60,120,0.35), transparent 45%),
-        radial-gradient(circle at 70% 80%, rgba(20,30,80,0.4), transparent 50%),
-        linear-gradient(160deg, #05070f, #0a1430, #02040a);
+        radial-gradient(circle at 20% 10%, rgba(40,60,140,0.45), transparent 40%),
+        radial-gradient(circle at 80% 90%, rgba(10,20,80,0.6), transparent 45%),
+        linear-gradient(180deg, #02030a, #050b1e, #00010a);
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       color: #eef1ff;
       display: flex;
@@ -25,13 +25,10 @@
       overflow: hidden;
     }
 
-    /* ✨ YILDIZLAR */
+    /* ✦ STARS SKY */
     .stars {
       position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
+      inset: 0;
       pointer-events: none;
       z-index: 0;
     }
@@ -40,116 +37,127 @@
       position: absolute;
       width: 2px;
       height: 2px;
-      background: rgba(160,180,255,0.8);
+      background: rgba(180,200,255,0.95);
       border-radius: 50%;
-      animation: floatStar 6s linear infinite;
+      box-shadow: 0 0 12px rgba(140,170,255,0.9);
+      animation: starMove linear infinite;
     }
 
-    @keyframes floatStar {
+    @keyframes starMove {
       from {
         transform: translateY(110vh);
         opacity: 0;
       }
-      30% {
-        opacity: 1;
-      }
+      20% { opacity: 1; }
       to {
-        transform: translateY(-10vh);
+        transform: translateY(-20vh);
         opacity: 0;
       }
     }
 
-    /* 📦 İÇERİK */
+    /* ✦ CONTENT */
     .wrapper {
       position: relative;
       z-index: 2;
-      max-width: 1000px;
-      padding: 90px;
+      max-width: 1100px;
+      padding: 100px;
     }
 
     h1 {
-      font-size: 4.2rem;
+      font-size: 4.6rem;
       font-weight: 700;
-      margin-bottom: 20px;
       letter-spacing: -1px;
+      margin-bottom: 24px;
+      color: #f1f3ff;
       text-shadow:
-        0 0 12px rgba(90,120,255,0.35),
-        0 0 40px rgba(30,50,120,0.4);
+        0 0 20px rgba(120,150,255,0.45),
+        0 0 60px rgba(40,70,180,0.5);
     }
 
     h1 span {
-      color: #7aa2ff;
+      color: #8fa8ff;
     }
 
     h2 {
-      font-size: 1.4rem;
+      font-size: 1.5rem;
       font-weight: 400;
-      color: #a9b8ff;
-      margin-bottom: 40px;
+      letter-spacing: 0.5px;
+      color: #b7c6ff;
+      margin-bottom: 50px;
     }
 
     p {
-      max-width: 600px;
-      font-size: 1.15rem;
-      line-height: 1.8;
-      color: #d6e0ff;
+      max-width: 620px;
+      font-size: 1.2rem;
+      line-height: 1.9;
+      color: #d8e0ff;
     }
 
     .buttons {
-      margin-top: 50px;
+      margin-top: 60px;
       display: flex;
-      gap: 20px;
+      gap: 24px;
     }
 
     .button {
-      padding: 14px 38px;
+      padding: 16px 44px;
       border-radius: 999px;
-      border: 1px solid rgba(120,140,255,0.4);
-      background: rgba(10,20,60,0.6);
-      color: #e6ebff;
+      border: 1px solid rgba(140,160,255,0.45);
+      background: rgba(15,25,80,0.7);
+      color: #eef1ff;
       font-size: 1rem;
       cursor: pointer;
-      transition: all 0.4s ease;
-      backdrop-filter: blur(10px);
       text-decoration: none;
+      transition: all 0.45s ease;
+      backdrop-filter: blur(14px);
+      letter-spacing: 0.5px;
     }
 
     .button:hover {
-      background: rgba(120,140,255,0.85);
-      color: #05070f;
-      box-shadow: 0 0 35px rgba(120,140,255,0.8);
-      transform: translateY(-6px);
+      background: rgba(150,170,255,0.95);
+      color: #02030a;
+      box-shadow:
+        0 0 40px rgba(150,170,255,0.9),
+        0 0 80px rgba(80,120,255,0.7);
+      transform: translateY(-8px);
     }
 
     footer {
-      margin-top: 90px;
+      margin-top: 110px;
       font-size: 0.85rem;
-      color: #7f91b3;
-      letter-spacing: 0.5px;
+      color: #8b9bd1;
+      letter-spacing: 1px;
     }
   </style>
 </head>
 
 <body>
 
-  <!-- ✨ STARS -->
+  <!-- ✦ STAR FIELD -->
   <div class="stars">
-    <div class="star" style="left:10%; animation-delay:0s;"></div>
-    <div class="star" style="left:25%; animation-delay:2s;"></div>
-    <div class="star" style="left:40%; animation-delay:4s;"></div>
-    <div class="star" style="left:60%; animation-delay:1s;"></div>
-    <div class="star" style="left:75%; animation-delay:3s;"></div>
-    <div class="star" style="left:90%; animation-delay:5s;"></div>
+    <div class="star" style="left:5%; animation-duration:7s;"></div>
+    <div class="star" style="left:12%; animation-duration:9s;"></div>
+    <div class="star" style="left:18%; animation-duration:6s;"></div>
+    <div class="star" style="left:26%; animation-duration:8s;"></div>
+    <div class="star" style="left:34%; animation-duration:10s;"></div>
+    <div class="star" style="left:42%; animation-duration:7s;"></div>
+    <div class="star" style="left:50%; animation-duration:9s;"></div>
+    <div class="star" style="left:58%; animation-duration:6s;"></div>
+    <div class="star" style="left:66%; animation-duration:8s;"></div>
+    <div class="star" style="left:74%; animation-duration:10s;"></div>
+    <div class="star" style="left:82%; animation-duration:7s;"></div>
+    <div class="star" style="left:90%; animation-duration:9s;"></div>
   </div>
 
-  <!-- 💙 CONTENT -->
+  <!-- ✦ MAIN -->
   <div class="wrapper">
     <h1>Hi, I’m <span>Sole</span></h1>
     <h2>Graphic Designer & Illustrator</h2>
 
     <p>
-      I create visual stories through illustration and graphic design.
-      Focused on dark aesthetics, strong contrasts and feminine energy.
+      I create dark, expressive visuals inspired by night cities,
+      feminine power and subtle chaos.
+      Illustration and design are my way of telling quiet but dangerous stories.
     </p>
 
     <div class="buttons">
