@@ -2,206 +2,171 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>ECEM — 夜の視覚</title>
+<title>ECEM 夜黒</title>
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 
 body{
-  min-height:100vh;
+  height:100vh;
   background:
     repeating-linear-gradient(
-      90deg,
-      rgba(40,60,140,0.08) 0px,
-      rgba(40,60,140,0.08) 1px,
-      transparent 1px,
-      transparent 6px
+      180deg,
+      rgba(0,0,0,.9) 0px,
+      rgba(0,0,0,.9) 2px,
+      rgba(5,10,30,.95) 4px
     ),
-    radial-gradient(circle at 10% 15%, rgba(90,120,255,0.55), transparent 35%),
-    radial-gradient(circle at 90% 85%, rgba(20,30,120,0.7), transparent 40%),
-    linear-gradient(180deg,#00010a,#020317,#000);
-  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-  color:#eaf0ff;
+    linear-gradient(120deg,#000,#02030a,#010214);
+  font-family: 'Arial', sans-serif;
+  color:#0a0f2a;
   overflow:hidden;
 }
 
-/* GLITCH LINES */
-.scanlines{
+/* JAPANESE NOISE */
+.noise{
   position:fixed;
   inset:0;
-  background:
-    repeating-linear-gradient(
-      to bottom,
-      rgba(255,255,255,0.03) 0px,
-      rgba(255,255,255,0.03) 1px,
-      transparent 2px,
-      transparent 4px
-    );
-  mix-blend-mode:overlay;
+  background-image:url("https://grainy-gradients.vercel.app/noise.svg");
+  opacity:.15;
+  z-index:10;
   pointer-events:none;
-  z-index:3;
 }
 
-/* STAR RAIN */
-.stars{position:fixed;inset:0;z-index:0;pointer-events:none}
-.star{
-  position:absolute;
-  width:2px;height:2px;
-  background:#b9c7ff;
-  box-shadow:0 0 18px #9fb4ff,0 0 40px rgba(120,160,255,.9);
-  animation:rain linear infinite;
-}
-@keyframes rain{
-  from{transform:translateY(120vh);opacity:0}
-  20%{opacity:1}
-  to{transform:translateY(-20vh);opacity:0}
-}
-
-/* NEON MIST */
-.mist{
-  position:fixed;
-  inset:-20%;
-  background:
-    radial-gradient(circle at 30% 40%, rgba(60,90,255,.35), transparent 50%),
-    radial-gradient(circle at 70% 60%, rgba(20,40,140,.4), transparent 55%);
-  filter:blur(80px);
-  animation:mistDrift 25s ease-in-out infinite alternate;
-  z-index:1;
-}
-@keyframes mistDrift{
-  from{transform:translateX(-10%)}
-  to{transform:translateX(10%)}
-}
-
-/* CONTENT */
-.wrapper{
-  position:relative;
-  z-index:2;
-  max-width:1200px;
-  padding:120px;
-}
-
+/* FLOATING KANJI */
 .kanji{
-  font-size:1.3rem;
-  letter-spacing:10px;
-  color:#6f88ff;
-  margin-bottom:35px;
-  opacity:.85;
+  position:absolute;
+  color:#05081a;
+  font-size:5rem;
+  font-weight:900;
+  writing-mode:vertical-rl;
+  opacity:.7;
+  animation:float 20s linear infinite;
+}
+@keyframes float{
+  from{transform:translateY(120vh)}
+  to{transform:translateY(-140vh)}
+}
+
+/* SHARDS */
+.shard{
+  position:absolute;
+  width:200px;
+  height:200px;
+  border:1px solid rgba(10,20,60,.8);
+  transform:rotate(45deg);
+  opacity:.4;
+  animation:spin 60s linear infinite;
+}
+@keyframes spin{
+  from{transform:rotate(0deg)}
+  to{transform:rotate(360deg)}
+}
+
+/* CENTER CORE */
+.core{
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  text-align:center;
+  z-index:5;
 }
 
 h1{
-  font-size:5.4rem;
-  font-weight:900;
-  letter-spacing:-2px;
-  margin-bottom:35px;
+  font-size:6rem;
+  letter-spacing:6px;
+  color:#02061a;
   text-shadow:
-    0 0 30px rgba(140,170,255,.7),
-    0 0 90px rgba(60,100,255,.9);
+    0 0 40px rgba(0,0,40,.9),
+    0 0 120px rgba(0,0,80,.9);
 }
 
-h1 span{color:#9fb4ff}
-
 h2{
-  font-size:1.7rem;
-  font-weight:400;
-  letter-spacing:3px;
-  color:#c6d4ff;
-  margin-bottom:65px;
+  margin-top:20px;
+  font-size:1.2rem;
+  letter-spacing:8px;
+  color:#030720;
 }
 
 p{
+  margin-top:60px;
   max-width:720px;
-  font-size:1.25rem;
-  line-height:2.1;
-  color:#dde6ff;
+  line-height:2.2;
+  font-size:1.05rem;
+  color:#02061f;
 }
 
-.buttons{
-  margin-top:80px;
+/* BUTTONS */
+.links{
+  margin-top:90px;
   display:flex;
-  gap:32px;
+  justify-content:center;
+  gap:50px;
 }
 
-.button{
-  padding:20px 56px;
-  border-radius:999px;
-  border:1px solid rgba(160,180,255,.6);
-  background:rgba(5,10,40,.75);
-  color:#eef2ff;
-  letter-spacing:3px;
+a{
   text-decoration:none;
-  backdrop-filter:blur(18px);
-  transition:.5s;
+  color:#030720;
+  padding:22px 60px;
+  border:1px solid rgba(10,20,80,.8);
+  letter-spacing:5px;
+  transition:.6s;
 }
-.button:hover{
-  background:#a9baff;
-  color:#00010a;
+a:hover{
+  background:#02061a;
   box-shadow:
-    0 0 60px rgba(170,190,255,1),
-    0 0 160px rgba(120,150,255,.9);
-  transform:translateY(-12px) scale(1.07);
+    0 0 40px rgba(0,0,80,1),
+    0 0 140px rgba(0,0,120,1);
+  transform:scale(1.15) rotate(-2deg);
 }
 
-footer{
-  margin-top:150px;
-  font-size:.8rem;
-  letter-spacing:5px;
-  color:#7f93ff;
-  opacity:.7;
+/* DARK PULSE */
+.pulse{
+  position:fixed;
+  inset:0;
+  background:radial-gradient(circle, rgba(0,0,60,.15), transparent 70%);
+  animation:pulse 8s infinite alternate;
+  z-index:2;
+}
+@keyframes pulse{
+  from{opacity:.2}
+  to{opacity:.6}
 }
 </style>
 </head>
 
 <body>
 
-<div class="stars">
-<script>
-for(let i=0;i<220;i++){
-  document.write(`<div class="star" style="
-    left:${Math.random()*100}%;
-    animation-duration:${4+Math.random()*7}s;
-    animation-delay:${Math.random()*6}s
-  "></div>`)
-}
-</script>
-</div>
+<div class="pulse"></div>
+<div class="noise"></div>
 
-<div class="mist"></div>
-<div class="scanlines"></div>
+<!-- KANJI CHAOS -->
+<div class="kanji" style="left:10%;animation-duration:28s;">夜</div>
+<div class="kanji" style="left:30%;animation-duration:24s;">影</div>
+<div class="kanji" style="left:55%;animation-duration:32s;">黒</div>
+<div class="kanji" style="left:75%;animation-duration:26s;">夢</div>
 
-<div class="wrapper">
-  <div class="kanji">夜・視・力</div>
+<!-- SHARDS -->
+<div class="shard" style="top:10%;left:15%"></div>
+<div class="shard" style="bottom:20%;right:20%"></div>
 
-  <h1>Hi, I’m <span>Ecem</span></h1>
-  <h2>GRAPHIC DESIGNER & ILLUSTRATOR</h2>
+<div class="core">
+  <h1>ECEM</h1>
+  <h2>GRAPHIC DESIGNER · ILLUSTRATOR</h2>
 
   <p>
     Graphic designer and illustrator with eight years of experience in visual
-    storytelling and image-making. My professional focus includes visual identity,
-    illustration, and concept-driven design.
+    storytelling and image-making. Focused on visual identity, illustration,
+    and concept-driven design rooted in narrative, restraint, and intention.
     <br><br>
-    I develop strong narratives through composition, typography, and
-    character-based visuals, aiming to create work that is intentional,
-    conceptually grounded, and emotionally precise.
-    <br><br>
-    Influenced by illustration, digital culture, Japanese visual language, and
-    editorial aesthetics, I value clarity, consistency, and meaning.
-    This portfolio represents design as both a professional practice and
-    a way of thinking.
+    Influenced by Japanese visual culture, darkness, silence, editorial systems,
+    and controlled chaos. Design as ritual. Image as language.
   </p>
 
-  <div class="buttons">
-    <a href="https://www.behance.net/ecemnurkahrman" target="_blank" class="button">
-      VIEW PORTFOLIO
-    </a>
-    <a href="mailto:gwem1720@gmail.com" class="button">
-      CONTACT
-    </a>
+  <div class="links">
+    <a href="https://www.behance.net/ecemnurkahrman" target="_blank">PORTFOLIO</a>
+    <a href="mailto:gwem1720@gmail.com">CONTACT</a>
   </div>
-
-  <footer>
-    © 2026 ECEM
-  </footer>
 </div>
 
 </body>
