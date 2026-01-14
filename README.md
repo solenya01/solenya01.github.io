@@ -98,24 +98,3 @@
 </a>
       <button class="button">Contact</button>
     </div>
-<section id="portfolio" style="margin-top:120px;">
-  <h2 style="font-size:2.2rem; margin-bottom:30px;">Portfolio</h2>
-
-  <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:20px;">
-    <div style="background:#112a4f; padding:40px; border-radius:16px;">
-      Illustration 01
-    </div>
-    <div style="background:#112a4f; padding:40px; border-radius:16px;">
-      Illustration 02
-    </div>
-    <div style="background:#112a4f; padding:40px; border-radius:16px;">
-      Illustration 03
-    </div>
-  </div>
-</section>
-    <footer>
-      © 2026 Sole
-    </footer>
-  </div>
-</body>
-</html>
