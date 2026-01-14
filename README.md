@@ -2,97 +2,102 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Sole — Designer & Illustrator</title>
+  <title>Sole | Designer & Illustrator</title>
 
   <style>
     * {
+      margin: 0;
+      padding: 0;
       box-sizing: border-box;
     }
 
     body {
-      margin: 0;
       min-height: 100vh;
-      background: linear-gradient(135deg, #0a192f, #112240);
+      background-color: #0b1d39;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      color: #e6f1ff;
+      color: #eaf0ff;
       display: flex;
       align-items: center;
       justify-content: center;
     }
 
-    .container {
-      max-width: 900px;
-      padding: 60px;
+    .wrapper {
+      max-width: 1000px;
+      padding: 80px;
     }
 
     h1 {
-      font-size: 3.5rem;
-      margin: 0 0 20px 0;
-      letter-spacing: -1px;
+      font-size: 4rem;
+      font-weight: 700;
+      margin-bottom: 20px;
     }
 
     h1 span {
-      color: #64ffda;
+      color: #4dd0e1;
+    }
+
+    h2 {
+      font-size: 1.4rem;
+      font-weight: 400;
+      color: #9fb3d1;
+      margin-bottom: 40px;
     }
 
     p {
-      font-size: 1.2rem;
-      line-height: 1.6;
-      color: #a8b2d1;
       max-width: 600px;
+      font-size: 1.1rem;
+      line-height: 1.7;
+      color: #c6d4ee;
     }
 
     .buttons {
-      margin-top: 40px;
+      margin-top: 50px;
       display: flex;
       gap: 20px;
     }
 
-    .btn {
-      padding: 14px 32px;
-      border-radius: 30px;
-      border: 1px solid #64ffda;
+    .button {
+      padding: 14px 36px;
+      border-radius: 40px;
+      border: 1px solid #4dd0e1;
       background: transparent;
-      color: #64ffda;
+      color: #4dd0e1;
       font-size: 1rem;
       cursor: pointer;
-      transition: all 0.3s ease;
+      transition: 0.3s;
     }
 
-    .btn:hover {
-      background: #64ffda;
-      color: #0a192f;
-      transform: translateY(-3px);
+    .button:hover {
+      background-color: #4dd0e1;
+      color: #0b1d39;
     }
 
-    .footer {
-      margin-top: 80px;
-      font-size: 0.9rem;
-      color: #8892b0;
+    footer {
+      margin-top: 90px;
+      font-size: 0.85rem;
+      color: #7f91b3;
     }
   </style>
 </head>
 
 <body>
-  <div class="container">
-    <h1>
-      Hi, I’m <span>Sole</span>
-    </h1>
+  <div class="wrapper">
+    <h1>Hi, I’m <span>Sole</span></h1>
+    <h2>Graphic Designer & Illustrator</h2>
 
     <p>
-      I’m a graphic designer & illustrator focused on creating clean,
-      expressive visuals and digital experiences.
-      I love color, balance and bold ideas.
+      I create visual stories through illustration and graphic design.
+      Focused on clean layouts, strong colors and expressive details.
     </p>
 
     <div class="buttons">
-      <button class="btn">View My Work</button>
-      <button class="btn">Contact Me</button>
+      <button class="button">View Portfolio</button>
+      <button class="button">Contact</button>
     </div>
 
-    <div class="footer">
-      © 2026 Sole — all rights reserved
-    </div>
+    <footer>
+      © 2026 Sole
+    </footer>
   </div>
 </body>
 </html>
