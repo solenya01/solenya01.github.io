@@ -109,7 +109,9 @@ p{
   margin-top:90px;
   display:flex;
   gap:36px;
+  justify-content:center;
 }
+
 
 .button{
   padding:20px 56px;
