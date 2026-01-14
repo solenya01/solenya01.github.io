@@ -163,7 +163,7 @@ footer{
 <div class="wrapper">
   <div class="jp">夜 • 美 • 力</div>
 
-  <h1>Hi, I’m <span>Sole</span></h1>
+  <h1>Hi, I’m <span>Ecem</span></h1>
   <h2>Graphic Designer & Illustrator</h2>
 
   <p>
