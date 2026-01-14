@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Sole — 夜の女神</title>
+<title>ECEM — 夜の視覚</title>
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
@@ -10,55 +10,70 @@
 body{
   min-height:100vh;
   background:
-    radial-gradient(circle at 15% 20%, rgba(90,120,255,0.5), transparent 35%),
-    radial-gradient(circle at 85% 80%, rgba(30,50,160,0.6), transparent 40%),
+    repeating-linear-gradient(
+      90deg,
+      rgba(40,60,140,0.08) 0px,
+      rgba(40,60,140,0.08) 1px,
+      transparent 1px,
+      transparent 6px
+    ),
+    radial-gradient(circle at 10% 15%, rgba(90,120,255,0.55), transparent 35%),
+    radial-gradient(circle at 90% 85%, rgba(20,30,120,0.7), transparent 40%),
     linear-gradient(180deg,#00010a,#020317,#000);
   font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
   color:#eaf0ff;
   overflow:hidden;
 }
 
-/* ✦ STAR STORM */
-.stars{
-  position:fixed;
-  inset:0;
-  z-index:0;
-  pointer-events:none;
-}
-
-.star{
-  position:absolute;
-  width:2px;
-  height:2px;
-  background:#b7c8ff;
-  box-shadow:0 0 15px #9fb4ff,0 0 30px rgba(120,150,255,0.8);
-  animation:fall linear infinite;
-}
-
-@keyframes fall{
-  from{transform:translateY(120vh);opacity:0}
-  15%{opacity:1}
-  to{transform:translateY(-20vh);opacity:0}
-}
-
-/* ✦ MIST */
-.mist{
+/* GLITCH LINES */
+.scanlines{
   position:fixed;
   inset:0;
   background:
-    radial-gradient(circle at 30% 60%, rgba(40,60,120,0.25), transparent 50%),
-    radial-gradient(circle at 70% 30%, rgba(20,30,90,0.3), transparent 55%);
-  filter:blur(40px);
-  animation:mistMove 20s ease-in-out infinite alternate;
+    repeating-linear-gradient(
+      to bottom,
+      rgba(255,255,255,0.03) 0px,
+      rgba(255,255,255,0.03) 1px,
+      transparent 2px,
+      transparent 4px
+    );
+  mix-blend-mode:overlay;
+  pointer-events:none;
+  z-index:3;
+}
+
+/* STAR RAIN */
+.stars{position:fixed;inset:0;z-index:0;pointer-events:none}
+.star{
+  position:absolute;
+  width:2px;height:2px;
+  background:#b9c7ff;
+  box-shadow:0 0 18px #9fb4ff,0 0 40px rgba(120,160,255,.9);
+  animation:rain linear infinite;
+}
+@keyframes rain{
+  from{transform:translateY(120vh);opacity:0}
+  20%{opacity:1}
+  to{transform:translateY(-20vh);opacity:0}
+}
+
+/* NEON MIST */
+.mist{
+  position:fixed;
+  inset:-20%;
+  background:
+    radial-gradient(circle at 30% 40%, rgba(60,90,255,.35), transparent 50%),
+    radial-gradient(circle at 70% 60%, rgba(20,40,140,.4), transparent 55%);
+  filter:blur(80px);
+  animation:mistDrift 25s ease-in-out infinite alternate;
   z-index:1;
 }
-
-@keyframes mistMove{
-  from{transform:translateX(-5%)}
-  to{transform:translateX(5%)}
+@keyframes mistDrift{
+  from{transform:translateX(-10%)}
+  to{transform:translateX(10%)}
 }
 
-/* ✦ CONTENT */
+/* CONTENT */
 .wrapper{
   position:relative;
   z-index:2;
@@ -66,76 +81,72 @@ body{
   padding:120px;
 }
 
-.jp{
-  font-size:1.2rem;
-  letter-spacing:8px;
-  color:#7f95ff;
-  opacity:0.8;
-  margin-bottom:30px;
+.kanji{
+  font-size:1.3rem;
+  letter-spacing:10px;
+  color:#6f88ff;
+  margin-bottom:35px;
+  opacity:.85;
 }
 
 h1{
-  font-size:5.2rem;
-  font-weight:800;
+  font-size:5.4rem;
+  font-weight:900;
   letter-spacing:-2px;
-  margin-bottom:30px;
+  margin-bottom:35px;
   text-shadow:
-    0 0 25px rgba(140,170,255,0.6),
-    0 0 80px rgba(60,100,255,0.8);
+    0 0 30px rgba(140,170,255,.7),
+    0 0 90px rgba(60,100,255,.9);
 }
 
-h1 span{
-  color:#9fb4ff;
-}
+h1 span{color:#9fb4ff}
 
 h2{
-  font-size:1.6rem;
+  font-size:1.7rem;
   font-weight:400;
-  letter-spacing:2px;
+  letter-spacing:3px;
   color:#c6d4ff;
-  margin-bottom:60px;
+  margin-bottom:65px;
 }
 
 p{
-  max-width:680px;
+  max-width:720px;
   font-size:1.25rem;
-  line-height:2;
-  color:#dbe4ff;
+  line-height:2.1;
+  color:#dde6ff;
 }
 
 .buttons{
-  margin-top:70px;
+  margin-top:80px;
   display:flex;
-  gap:30px;
+  gap:32px;
 }
 
 .button{
-  padding:18px 50px;
+  padding:20px 56px;
   border-radius:999px;
-  border:1px solid rgba(150,170,255,0.6);
-  background:rgba(10,15,60,0.7);
+  border:1px solid rgba(160,180,255,.6);
+  background:rgba(5,10,40,.75);
   color:#eef2ff;
+  letter-spacing:3px;
   text-decoration:none;
-  font-size:1rem;
-  letter-spacing:2px;
-  backdrop-filter:blur(16px);
-  transition:all .45s ease;
+  backdrop-filter:blur(18px);
+  transition:.5s;
 }
-
 .button:hover{
-  background:#9fb4ff;
+  background:#a9baff;
   color:#00010a;
   box-shadow:
-    0 0 50px rgba(160,180,255,1),
-    0 0 120px rgba(100,140,255,0.9);
-  transform:translateY(-10px) scale(1.05);
+    0 0 60px rgba(170,190,255,1),
+    0 0 160px rgba(120,150,255,.9);
+  transform:translateY(-12px) scale(1.07);
 }
 
 footer{
-  margin-top:130px;
+  margin-top:150px;
   font-size:.8rem;
-  letter-spacing:4px;
-  color:#8fa2ff;
+  letter-spacing:5px;
+  color:#7f93ff;
   opacity:.7;
 }
 </style>
@@ -143,46 +154,41 @@ footer{
 
 <body>
 
-<!-- STAR CHAOS -->
 <div class="stars">
-  <script>
-    for(let i=0;i<120;i++){
-      document.write(
-        `<div class="star" style="
-          left:${Math.random()*100}%;
-          animation-duration:${5+Math.random()*6}s;
-          animation-delay:${Math.random()*6}s
-        "></div>`
-      )
-    }
-  </script>
+<script>
+for(let i=0;i<220;i++){
+  document.write(`<div class="star" style="
+    left:${Math.random()*100}%;
+    animation-duration:${4+Math.random()*7}s;
+    animation-delay:${Math.random()*6}s
+  "></div>`)
+}
+</script>
 </div>
 
 <div class="mist"></div>
+<div class="scanlines"></div>
 
 <div class="wrapper">
-  <div class="jp">夜 • 美 • 力</div>
+  <div class="kanji">夜・視・力</div>
 
   <h1>Hi, I’m <span>Ecem</span></h1>
-  <h2>Graphic Designer & Illustrator</h2>
+  <h2>GRAPHIC DESIGNER & ILLUSTRATOR</h2>
 
   <p>
-  Hi, I’m Ecem. Graphic designer and illustrator with eight years of experience
-  in visual storytelling and image-making. My professional focus includes visual
-  identity, illustration, and concept-driven design.
-  <br><br>
-  I have experience in developing strong narratives through composition,
-  typography, and character-based visuals, aiming to create designs that are
-  intentional and conceptually grounded rather than purely decorative.
-  <br><br>
-  Throughout my career, I have built a distinctive visual language influenced by
-  illustration, digital culture, and editorial aesthetics. I value clarity,
-  consistency, and meaning in design, and I strive to produce visuals that
-  communicate ideas with confidence and precision.
-  <br><br>
-  This portfolio represents my long-term dedication to graphic design and
-  illustration as both a professional practice and a way of thinking.
-</p>
+    Graphic designer and illustrator with eight years of experience in visual
+    storytelling and image-making. My professional focus includes visual identity,
+    illustration, and concept-driven design.
+    <br><br>
+    I develop strong narratives through composition, typography, and
+    character-based visuals, aiming to create work that is intentional,
+    conceptually grounded, and emotionally precise.
+    <br><br>
+    Influenced by illustration, digital culture, Japanese visual language, and
+    editorial aesthetics, I value clarity, consistency, and meaning.
+    This portfolio represents design as both a professional practice and
+    a way of thinking.
+  </p>
 
   <div class="buttons">
     <a href="https://www.behance.net/ecemnurkahrman" target="_blank" class="button">
@@ -194,7 +200,7 @@ footer{
   </div>
 
   <footer>
-    © 2026 SOLE
+    © 2026 ECEM
   </footer>
 </div>
 
